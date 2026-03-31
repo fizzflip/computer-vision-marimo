@@ -1,0 +1,38 @@
+[project]
+name = "marimo-notebooks"
+version = "0.1.0"
+description = "a marimo notebook management env"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "marimo>=0.19.8",
+    "opencv-python>=4.13.0.90",
+    "pillow>=12.1.0",
+    "anyio<4",
+    "oracledb>=3.4.1",
+    "marimushka>=0.2.5",
+    "nbconvert>=7.17.0",
+    "playwright>=1.58.0",
+    "requests>=2.32.5",
+    "pandas>=3.0.0",
+    "imutils>=0.5.4",
+    "matplotlib>=3.10.8",
+    "yfinance>=1.2.0",
+    "pandoc>=2.4",
+    "pyzbar>=0.1.9",
+]
+
+[dependency-groups]
+dev = [
+    "altair>=6.0.0",
+    "duckdb>=1.4.3",
+    "nbformat>=5.10.4",
+    "polars[pyarrow]>=1.37.1",
+    "python-lsp-ruff>=2.3.0",
+    "python-lsp-server>=1.14.0",
+    "ruff>=0.14.14",
+    "sqlglot>=28.6.0",
+    "vegafusion>=2.0.3",
+    "vl-convert-python>=1.9.0.post1",
+    "websockets>=16.0",
+]

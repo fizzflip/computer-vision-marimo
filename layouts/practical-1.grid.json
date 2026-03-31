@@ -1,0 +1,55 @@
+{
+  "type": "grid",
+  "data": {
+    "columns": 24,
+    "rowHeight": 20,
+    "maxWidth": 1400,
+    "bordered": true,
+    "cells": [
+      {
+        "position": [
+          13,
+          25,
+          6,
+          3
+        ]
+      },
+      {
+        "position": [
+          1,
+          1,
+          6,
+          9
+        ]
+      },
+      {
+        "position": [
+          1,
+          10,
+          6,
+          15
+        ]
+      },
+      {
+        "position": [
+          13,
+          0,
+          11,
+          25
+        ]
+      },
+      {
+        "position": null
+      },
+      {
+        "position": null
+      },
+      {
+        "position": null
+      },
+      {
+        "position": null
+      }
+    ]
+  }
+}
