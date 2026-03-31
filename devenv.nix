@@ -22,7 +22,6 @@ in
   packages = [ pkgs.pandoc ];
 
   profiles = {
-
     main.module = {
       languages.python = {
         enable = true;
@@ -53,6 +52,5 @@ in
         '';
       };
     };
-
   };
 }
