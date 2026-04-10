@@ -32,7 +32,7 @@ jobs:
         # ⚠️ NOTE: If you are NOT using the template's build.py script and just 
         # want to deploy a single notebook directly, replace the `run` command above with:
         run: |
-          uv pip install --system marimo numpy pandas python-opencv 
+          uv pip install marimo numpy pandas python-opencv
           marimo export html-wasm notebook.py -o _site --mode run
 
       - name: Upload Pages Artifact
