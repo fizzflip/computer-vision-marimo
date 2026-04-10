@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.19.8"
+__generated_with = "0.23.0"
 app = marimo.App(
     width="medium",
     layout_file="layouts/geometric-transformations.grid.json",
@@ -58,6 +58,14 @@ def _(A, B, C, D, E, F, np):
                        [C.value, D.value], 
                        [E.value, F.value]])
     return pts1, pts2
+
+
+app._unparsable_cell(
+    r"""
+    img =
+    """,
+    name="_"
+)
 
 
 @app.cell

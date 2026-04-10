@@ -1,12 +1,13 @@
 import marimo
 
-__generated_with = "0.19.6"
+__generated_with = "0.23.0"
 app = marimo.App(width="medium", auto_download=["ipynb", "html"])
 
 
 @app.cell
 def _():
     import oracledb
+
     return (oracledb,)
 
 
@@ -59,6 +60,7 @@ def _(connection, mo, students):
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 

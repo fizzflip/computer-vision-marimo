@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.19.7"
+__generated_with = "0.23.0"
 app = marimo.App()
 
 
@@ -24,6 +24,7 @@ def _(mo):
 def _():
     import cv2
     import marimo as mo
+
     return cv2, mo
 
 
