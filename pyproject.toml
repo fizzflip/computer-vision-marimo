@@ -20,6 +20,7 @@ dependencies = [
     "yfinance>=1.2.0",
     "pandoc>=2.4",
     "pyzbar>=0.1.9",
+    "wigglystuff>=0.3.2",
 ]
 
 [dependency-groups]

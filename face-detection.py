@@ -13,6 +13,14 @@ def _():
 
 
 @app.cell
+def _(mo):
+    # This allows the user to upload or take a photo
+    f = mo.ui.file(filetypes=[".png", ".jpg"])
+    f
+    return (f,)
+
+
+@app.cell
 def _(cv2):
     face_cascade = cv2.CascadeClassifier(
         cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
@@ -21,9 +29,9 @@ def _(cv2):
 
 
 @app.cell
-def _(cv2, mo):
-    image = cv2.imread("./samples/images/girl-straight-viewer.jpg")
-    mo.image(image)
+def _(cv2, f, mo):
+    image = cv2.imread(f.value[0].contents)
+    mo.image(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     return (image,)
 
 
@@ -39,6 +47,7 @@ def _(face_cascade, gray_image):
     faces = face_cascade.detectMultiScale(
         gray_image, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30)
     )
+    faces
     return (faces,)
 
 
@@ -50,8 +59,13 @@ def _(cv2, faces, image):
 
 
 @app.cell
-def _(image, mo):
-    mo.image(image)
+def _(cv2, image, mo):
+    mo.image(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+    return
+
+
+@app.cell
+def _():
     return
 
 
