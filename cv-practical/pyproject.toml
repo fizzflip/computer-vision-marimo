@@ -1,0 +1,17 @@
+[project]
+name = "marimo-notebooks"
+version = "0.1.0"
+description = "a marimo notebook management env"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "marimo>=0.23.1",
+    "nbformat>=5.10.4",
+    "numpy>=2.4.4",
+    "opencv-python>=4.13.0.90",
+    "pillow>=12.2.0",
+]
+
+[dependency-groups]
+dev = [
+]
