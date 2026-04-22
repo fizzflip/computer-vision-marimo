@@ -17,7 +17,6 @@ def _(mo):
     # This allows the user to upload or take a photo
     f = mo.ui.file(filetypes=[".png", ".jpg"])
     f
-
     return (f,)
 
 
@@ -34,20 +33,17 @@ def _(cv2, f):
 
 
 @app.cell
-def _():
+def _(mo):
     from wigglystuff import WebcamCapture
-
-    # Create the webcam component
     camera = WebcamCapture()
-    camera
+    mo.hstack([camera, mo.image(camera.image_base64)])
     return (camera,)
 
 
 @app.cell
-def _(camera, mo):
-
-    mo.image(camera.image_base64)
-
+def _(camera, cv2, mo):
+    img = cv2.imread(camera.image_base64)
+    mo.image(img)
     return
 
 

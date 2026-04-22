@@ -7,6 +7,7 @@ app = marimo.App(width="medium", auto_download=["ipynb", "html"])
 @app.cell
 def _():
     import marimo as mo
+    import numpy as np
     import cv2
 
     return cv2, mo
@@ -14,14 +15,20 @@ def _():
 
 @app.cell
 def _(mo):
-    # This allows the user to upload or take a photo
-    f = mo.ui.file(filetypes=[".png", ".jpg"])
+    f = mo.ui.file(kind="area")
     f
     return (f,)
 
 
 @app.cell
+def _(f):
+    f.value
+    return
+
+
+@app.cell
 def _(cv2):
+
     face_cascade = cv2.CascadeClassifier(
         cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
     )
@@ -29,8 +36,8 @@ def _(cv2):
 
 
 @app.cell
-def _(cv2, f, mo):
-    image = cv2.imread(f.value[0].contents)
+def _(cv2, mo):
+    image = cv2.imread('./samples/images/crowd-low-res.jpg')
     mo.image(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     return (image,)
 
@@ -54,7 +61,8 @@ def _(face_cascade, gray_image):
 @app.cell
 def _(cv2, faces, image):
     for x, y, w, h in faces:
-        cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
+        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 0), 2)
+        cv2.rectangle(image, (x, y+h), (x+w, y+h+20), (255, 0, 0), -1)
     return
 
 
